@@ -1,20 +1,36 @@
 name: Build ProjectOS
+
 on:
   workflow_dispatch:
   push:
     tags: ['v*']
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
-      - run: npm run build
-      - uses: actions/upload-artifact@v4
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build ProjectOS
+        run: npm run build
+
+      - name: Create GitHub Release and upload installer
+        uses: softprops/action-gh-release@v2
         with:
-          name: ProjectOS-Windows
-          path: dist/*.exe
+          tag_name: ${{ github.ref_name }}
+          name: ProjectOS ${{ github.ref_name }}
+          generate_release_notes: true
+          files: dist/*.exe
