@@ -1,0 +1,23 @@
+{
+  "name": "projectos",
+  "version": "0.1.0",
+  "description": "ProjectOS — the operating system for everything you create.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.joelengelman.projectos",
+    "productName": "ProjectOS",
+    "directories": { "output": "dist" },
+    "files": ["src/**/*", "package.json"],
+    "win": { "target": "nsis", "artifactName": "ProjectOS-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
+  }
+}
