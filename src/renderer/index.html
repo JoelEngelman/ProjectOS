@@ -5,6 +5,7 @@
 <title>ProjectOS</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="kinetic-grid" aria-hidden="true"></div>
 <div class="app">
   <aside class="sidebar">
     <div class="brand"><div class="brand-mark">P</div><div><b>PROJECTOS</b><small>The creator OS</small></div></div>
@@ -16,10 +17,7 @@
     </nav>
     <div class="sidebar-bottom"><div class="storage"><span>Workspace</span><strong>Local</strong><div class="bar"><i></i></div></div><button class="nav">⚙ <span>Settings</span></button></div>
   </aside>
-  <main>
-    <header><div><div class="eyebrow">YOUR WORKSPACE</div><h1 id="title">Dashboard</h1></div><div class="header-actions"><button class="icon">⌕</button><button class="avatar">JE</button></div></header>
-    <section id="content"></section>
-  </main>
+  <main><header><div><div class="eyebrow">YOUR WORKSPACE</div><h1 id="title">Dashboard</h1></div><div class="header-actions"><button class="icon">⌕</button><button class="avatar">JE</button></div></header><section id="content"></section></main>
 </div>
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><h2 id="modalTitle">New project</h2><input id="nameInput" placeholder="Project name"><textarea id="descInput" placeholder="What are you building?"></textarea><button class="primary" id="saveModal">Create</button></div></div>
 <script src="app.js"></script>
