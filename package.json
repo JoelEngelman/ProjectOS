@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron .",
-    "build": "electron-builder --win"
+    "build": "electron-builder --win --publish never"
   },
   "devDependencies": {
     "electron": "^37.2.6",
@@ -17,7 +17,7 @@
     "productName": "ProjectOS",
     "directories": { "output": "dist" },
     "files": ["src/**/*", "package.json"],
-    "win": { "target": "nsis", "artifactName": "ProjectOS-Setup-${version}.${ext}" },
+    "win": { "target": "nsis", "artifactName": "ProjectOS-Setup-${version}.${ext}", "icon": "build/icon.ico" },
     "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
   }
 }
