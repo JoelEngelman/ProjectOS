@@ -7,7 +7,7 @@ function createWindow() {
     height: 900,
     minWidth: 1050,
     minHeight: 650,
-    backgroundColor: '#080b16',
+    backgroundColor: '#eef1f5',
     title: 'ProjectOS',
     autoHideMenuBar: true,
     webPreferences: {
