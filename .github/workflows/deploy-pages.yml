@@ -28,17 +28,23 @@ jobs:
           ref: main
           fetch-depth: 1
 
-      - name: Prepare and verify web preview
+      - name: Prepare, cache-bust, and verify web preview
         shell: bash
         run: |
           set -euo pipefail
           rm -rf _site
           mkdir -p _site
           cp -R src/renderer/. _site/
+          # Give every deployment a unique asset URL so stale Pages/CDN assets cannot win.
+          sed -i "s/style\.css?v=kinetic-2/style.css?v=$GITHUB_SHA/g" _site/index.html
+          sed -i "s/app\.js?v=kinetic-2/app.js?v=$GITHUB_SHA/g" _site/index.html
           printf '\n<!-- ProjectOS deployment: %s -->\n' "$GITHUB_SHA" >> _site/index.html
           test -f _site/index.html
-          grep -q 'kinetic-2' _site/index.html
-          echo "Verified current renderer and cache-busting asset version."
+          grep -q "$GITHUB_SHA" _site/index.html
+          grep -q 'style.css?v=' _site/index.html
+          grep -q 'app.js?v=' _site/index.html
+          grep -q 'kinetic-grid' _site/index.html
+          echo "Verified renderer, unique asset URLs, and Kinetic Grid."
           echo "Deploying commit: $GITHUB_SHA"
 
       - name: Configure GitHub Pages
