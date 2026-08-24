@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f5f5f7">
   <title>ProjectOS — The operating system for everything you create</title>
-  <link rel="stylesheet" href="style.css?v=20260824">
+  <link rel="stylesheet" href="style.css?v=20260824-2">
 </head>
 <body>
   <div class="app-shell">
@@ -22,29 +22,16 @@
         <div class="workspace-row"><span class="avatar">JE</span><div><b>Joel's Studio</b><small>Personal workspace</small></div></div>
       </div>
     </aside>
-
     <main class="main">
-      <header class="topbar">
-        <div><div class="eyebrow">SUNDAY, AUGUST 23</div><h1 id="page-title">Good afternoon, Joel <span>👋</span></h1></div>
-        <div class="top-actions"><button class="icon-btn" title="Search">⌕</button><button class="icon-btn" title="Notifications">♢</button><button class="avatar large">JE</button></div>
-      </header>
-
-      <section id="dashboard" class="view active-view">
-        <div class="hero-card"><div><div class="eyebrow">YOUR CREATIVE COMMAND CENTRE</div><h2>Build. Organize. Ship.</h2><p>Keep every idea, project and task moving forward.</p></div><button class="primary" id="newProjectHero">＋ New project</button></div>
-        <div class="stats-grid" id="stats"></div>
-        <div class="section-heading"><div><h3>Active projects</h3><p>Your work at a glance.</p></div><button class="ghost" data-view-target="projects">View all →</button></div>
-        <div class="project-grid" id="dashboardProjects"></div>
-        <div class="section-heading"><div><h3>Next up</h3><p>Tasks waiting for you.</p></div></div>
-        <div class="task-list" id="dashboardTasks"></div>
-      </section>
-
+      <header class="topbar"><div><div class="eyebrow">SUNDAY, AUGUST 23</div><h1 id="page-title">Good afternoon, Joel <span>👋</span></h1></div><div class="top-actions"><button class="icon-btn" title="Search">⌕</button><button class="icon-btn" title="Notifications">♢</button><button class="avatar large">JE</button></div></header>
+      <section id="dashboard" class="view active-view"><div class="hero-card"><div><div class="eyebrow">YOUR CREATIVE COMMAND CENTRE</div><h2>Build. Organize. Ship.</h2><p>Keep every idea, project and task moving forward.</p></div><button class="primary" id="newProjectHero">＋ New project</button></div><div class="stats-grid" id="stats"></div><div class="section-heading"><div><h3>Active projects</h3><p>Your work at a glance.</p></div><button class="ghost" data-view-target="projects">View all →</button></div><div class="project-grid" id="dashboardProjects"></div><div class="section-heading"><div><h3>Next up</h3><p>Tasks waiting for you.</p></div></div><div class="task-list" id="dashboardTasks"></div></section>
       <section id="projects" class="view"><div class="section-heading"><div><h2>Projects</h2><p>Everything you're building.</p></div><button class="primary" id="newProject">＋ New project</button></div><div class="project-grid" id="allProjects"></div></section>
       <section id="tasks" class="view"><div class="section-heading"><div><h2>Tasks</h2><p>Turn plans into progress.</p></div><button class="primary" id="newTask">＋ New task</button></div><div class="kanban" id="kanban"></div></section>
       <section id="ideas" class="view"><div class="section-heading"><div><h2>Idea Vault</h2><p>Never lose a crazy idea again.</p></div><button class="primary" id="newIdea">＋ Capture idea</button></div><div class="idea-grid" id="ideasGrid"></div></section>
     </main>
   </div>
   <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="modal"></div></div>
-  <script src="app.js?v=20260824"></script>
-  <script src="settings.js?v=20260824"></script>
+  <script src="app.js?v=20260824-2"></script>
+  <script src="settings.js?v=20260824-2"></script>
 </body>
 </html>
